@@ -1,0 +1,195 @@
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #e0f7fa;
+    color: #004d40;
+    padding-top: 50px;
+}
+
+/* Navbar styling */
+.navbar {
+    background-color: #00796b;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px 20px;
+    z-index: 10;
+}
+
+/* Form styling */
+form {
+    background-color: #e0f2f1;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+input[type="text"], input[type="file"], select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #004d40;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    background-color: #004d40;
+    color: #e0f7fa;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #00251a;
+}
+
+/* Albums and Photos Section */
+.album, .photoContainer {
+    background-color: #e0f2f1;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    margin: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.album:hover, .photoContainer:hover {
+    transform: scale(1.05);
+}
+
+/* Album list */
+.albums {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.album img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.album h3 {
+    font-size: 18px;
+    margin: 15px;
+}
+
+.album a {
+    text-decoration: none;
+    color: #004d40;
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 15px;
+    display: block;
+    text-align: center;
+}
+
+/* Photo Card */
+.photoContainer {
+    width: 100%;
+    max-width: 350px;
+    padding: 10px;
+    text-align: center;
+}
+
+.photoContainer img {
+    border-radius: 8px;
+    width: 100%;
+    height: auto;
+}
+
+.photoDescription {
+    padding: 15px;
+    background-color: #e0f2f1;
+    text-align: left;
+}
+
+.photoDescription h2 {
+    font-size: 16px;
+    color: #004d40;
+    font-weight: bold;
+}
+
+.photoDescription p {
+    font-size: 12px;
+    color: #00695c;
+}
+
+.photoDescription h4 {
+    font-size: 14px;
+    color: #004d40;
+}
+
+.photoDescription a {
+    color: #004d40;
+    font-size: 14px;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.photoDescription a:hover {
+    text-decoration: underline;
+}
+
+/* Delete Button */
+input[type="submit"][name="deleteAlbumBtn"] {
+    background-color: #d32f2f;
+    color: #ffebee;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"][name="deleteAlbumBtn"]:hover {
+    background-color: #b71c1c;
+}
+
+.delete-confirmation {
+    display: none;
+    background-color: rgba(38, 50, 56, 0.7);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.delete-confirmation.active {
+    display: flex;
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .albums {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .album, .photoContainer {
+        width: 100%;
+        max-width: 90%;
+    }
+}
